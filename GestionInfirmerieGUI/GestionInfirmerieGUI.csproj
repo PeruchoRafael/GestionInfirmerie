@@ -59,10 +59,35 @@
     <Compile Include="AjoutEleve.Designer.cs">
       <DependentUpon>AjoutEleve.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionInfirmerieDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GestionInfirmerieDataSet.xsd</DependentUpon>
+    <Compile Include="AjoutMedicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutMedicament.Designer.cs">
+      <DependentUpon>AjoutMedicament.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AjoutVisite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutVisite.Designer.cs">
+      <DependentUpon>AjoutVisite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeVisite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeVisite.Designer.cs">
+      <DependentUpon>ListeVisite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListeMedicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListeMedicament.Designer.cs">
+      <DependentUpon>ListeMedicament.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifEleve.Designer.cs">
+      <DependentUpon>ModifEleve.cs</DependentUpon>
     </Compile>
     <Compile Include="ListeEleve.cs">
       <SubType>Form</SubType>
@@ -84,11 +109,26 @@
     <EmbeddedResource Include="AjoutEleve.resx">
       <DependentUpon>AjoutEleve.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AjoutMedicament.resx">
+      <DependentUpon>AjoutMedicament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AjoutVisite.resx">
+      <DependentUpon>AjoutVisite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeVisite.resx">
+      <DependentUpon>ListeVisite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListeMedicament.resx">
+      <DependentUpon>ListeMedicament.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionInfirmerie.resx">
       <DependentUpon>GestionInfirmerie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListeEleve.resx">
       <DependentUpon>ListeEleve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifEleve.resx">
+      <DependentUpon>ModifEleve.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,17 +139,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="GestionInfirmerieDataSet.xsc">
-      <DependentUpon>GestionInfirmerieDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GestionInfirmerieDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GestionInfirmerieDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GestionInfirmerieDataSet.xss">
-      <DependentUpon>GestionInfirmerieDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

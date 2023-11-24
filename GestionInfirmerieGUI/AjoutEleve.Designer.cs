@@ -30,17 +30,17 @@
 		{
 			this.btnValider = new System.Windows.Forms.Button();
 			this.txtNom = new System.Windows.Forms.TextBox();
-			this.btnListeMedoc = new System.Windows.Forms.Button();
-			this.btnAjoutMedoc = new System.Windows.Forms.Button();
+			this.btnListeMedicament = new System.Windows.Forms.Button();
+			this.btnAjoutMedicament = new System.Windows.Forms.Button();
 			this.btnListeVisite = new System.Windows.Forms.Button();
 			this.btnAjoutVisite = new System.Windows.Forms.Button();
 			this.btnListeEleve = new System.Windows.Forms.Button();
-			this.btnAjoutEleve = new System.Windows.Forms.Button();
+			this.btnAccueilEleve = new System.Windows.Forms.Button();
 			this.lblNom = new System.Windows.Forms.Label();
 			this.txtPrenom = new System.Windows.Forms.TextBox();
 			this.lblPrenom = new System.Windows.Forms.Label();
 			this.lblClasse = new System.Windows.Forms.Label();
-			this.txtClasse = new System.Windows.Forms.ComboBox();
+			this.comboBoxClasse = new System.Windows.Forms.ComboBox();
 			this.txtSante = new System.Windows.Forms.TextBox();
 			this.lblSante = new System.Windows.Forms.Label();
 			this.txtDateNaissance = new System.Windows.Forms.TextBox();
@@ -50,18 +50,21 @@
 			this.txtTelParent = new System.Windows.Forms.TextBox();
 			this.lblTelParent = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.txtTiersTemps = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// btnValider
 			// 
 			this.btnValider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(201)))), ((int)(((byte)(63)))));
-			this.btnValider.Location = new System.Drawing.Point(101, 512);
+			this.btnValider.Location = new System.Drawing.Point(102, 618);
 			this.btnValider.Name = "btnValider";
 			this.btnValider.Size = new System.Drawing.Size(350, 100);
 			this.btnValider.TabIndex = 19;
 			this.btnValider.Text = "Valider";
 			this.btnValider.UseVisualStyleBackColor = false;
+			this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
 			// 
 			// txtNom
 			// 
@@ -70,29 +73,31 @@
 			this.txtNom.Size = new System.Drawing.Size(250, 22);
 			this.txtNom.TabIndex = 18;
 			// 
-			// btnListeMedoc
+			// btnListeMedicament
 			// 
-			this.btnListeMedoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-			this.btnListeMedoc.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnListeMedoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnListeMedoc.Location = new System.Drawing.Point(12, 289);
-			this.btnListeMedoc.Name = "btnListeMedoc";
-			this.btnListeMedoc.Size = new System.Drawing.Size(200, 53);
-			this.btnListeMedoc.TabIndex = 17;
-			this.btnListeMedoc.Text = "Liste des médicaments";
-			this.btnListeMedoc.UseVisualStyleBackColor = false;
+			this.btnListeMedicament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+			this.btnListeMedicament.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnListeMedicament.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnListeMedicament.Location = new System.Drawing.Point(12, 289);
+			this.btnListeMedicament.Name = "btnListeMedicament";
+			this.btnListeMedicament.Size = new System.Drawing.Size(200, 53);
+			this.btnListeMedicament.TabIndex = 17;
+			this.btnListeMedicament.Text = "Liste des médicaments";
+			this.btnListeMedicament.UseVisualStyleBackColor = false;
+			this.btnListeMedicament.Click += new System.EventHandler(this.btnListeMedicament_Click);
 			// 
-			// btnAjoutMedoc
+			// btnAjoutMedicament
 			// 
-			this.btnAjoutMedoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-			this.btnAjoutMedoc.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnAjoutMedoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAjoutMedoc.Location = new System.Drawing.Point(12, 233);
-			this.btnAjoutMedoc.Name = "btnAjoutMedoc";
-			this.btnAjoutMedoc.Size = new System.Drawing.Size(200, 53);
-			this.btnAjoutMedoc.TabIndex = 16;
-			this.btnAjoutMedoc.Text = "Ajouter un médicament";
-			this.btnAjoutMedoc.UseVisualStyleBackColor = false;
+			this.btnAjoutMedicament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+			this.btnAjoutMedicament.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnAjoutMedicament.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAjoutMedicament.Location = new System.Drawing.Point(12, 233);
+			this.btnAjoutMedicament.Name = "btnAjoutMedicament";
+			this.btnAjoutMedicament.Size = new System.Drawing.Size(200, 53);
+			this.btnAjoutMedicament.TabIndex = 16;
+			this.btnAjoutMedicament.Text = "Ajouter un médicament";
+			this.btnAjoutMedicament.UseVisualStyleBackColor = false;
+			this.btnAjoutMedicament.Click += new System.EventHandler(this.btnAjoutMedicament_Click);
 			// 
 			// btnListeVisite
 			// 
@@ -105,6 +110,7 @@
 			this.btnListeVisite.TabIndex = 15;
 			this.btnListeVisite.Text = "Liste des visites";
 			this.btnListeVisite.UseVisualStyleBackColor = false;
+			this.btnListeVisite.Click += new System.EventHandler(this.btnListeVisite_Click);
 			// 
 			// btnAjoutVisite
 			// 
@@ -117,6 +123,7 @@
 			this.btnAjoutVisite.TabIndex = 14;
 			this.btnAjoutVisite.Text = "Ajouter une visite";
 			this.btnAjoutVisite.UseVisualStyleBackColor = false;
+			this.btnAjoutVisite.Click += new System.EventHandler(this.btnAjoutVisite_Click);
 			// 
 			// btnListeEleve
 			// 
@@ -131,18 +138,18 @@
 			this.btnListeEleve.UseVisualStyleBackColor = false;
 			this.btnListeEleve.Click += new System.EventHandler(this.btnListeEleve_Click);
 			// 
-			// btnAjoutEleve
+			// btnAccueilEleve
 			// 
-			this.btnAjoutEleve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-			this.btnAjoutEleve.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnAjoutEleve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAjoutEleve.Location = new System.Drawing.Point(12, 9);
-			this.btnAjoutEleve.Name = "btnAjoutEleve";
-			this.btnAjoutEleve.Size = new System.Drawing.Size(200, 53);
-			this.btnAjoutEleve.TabIndex = 11;
-			this.btnAjoutEleve.Text = "Accueil élève";
-			this.btnAjoutEleve.UseVisualStyleBackColor = false;
-			this.btnAjoutEleve.Click += new System.EventHandler(this.btnAjoutEleve_Click);
+			this.btnAccueilEleve.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+			this.btnAccueilEleve.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnAccueilEleve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAccueilEleve.Location = new System.Drawing.Point(12, 9);
+			this.btnAccueilEleve.Name = "btnAccueilEleve";
+			this.btnAccueilEleve.Size = new System.Drawing.Size(200, 53);
+			this.btnAccueilEleve.TabIndex = 11;
+			this.btnAccueilEleve.Text = "Accueil élève";
+			this.btnAccueilEleve.UseVisualStyleBackColor = false;
+			this.btnAccueilEleve.Click += new System.EventHandler(this.btnAccueilEleve_Click);
 			// 
 			// lblNom
 			// 
@@ -173,23 +180,24 @@
 			// lblClasse
 			// 
 			this.lblClasse.AutoSize = true;
-			this.lblClasse.Location = new System.Drawing.Point(50, 178);
+			this.lblClasse.Location = new System.Drawing.Point(50, 536);
 			this.lblClasse.Name = "lblClasse";
 			this.lblClasse.Size = new System.Drawing.Size(58, 17);
 			this.lblClasse.TabIndex = 22;
 			this.lblClasse.Text = "Classe :";
 			// 
-			// txtClasse
+			// comboBoxClasse
 			// 
-			this.txtClasse.FormattingEnabled = true;
-			this.txtClasse.Location = new System.Drawing.Point(239, 175);
-			this.txtClasse.Name = "txtClasse";
-			this.txtClasse.Size = new System.Drawing.Size(250, 24);
-			this.txtClasse.TabIndex = 24;
+			this.comboBoxClasse.FormattingEnabled = true;
+			this.comboBoxClasse.Location = new System.Drawing.Point(239, 533);
+			this.comboBoxClasse.Name = "comboBoxClasse";
+			this.comboBoxClasse.Size = new System.Drawing.Size(250, 24);
+			this.comboBoxClasse.TabIndex = 24;
+			this.comboBoxClasse.SelectedIndexChanged += new System.EventHandler(this.txtClasse_SelectedIndexChanged);
 			// 
 			// txtSante
 			// 
-			this.txtSante.Location = new System.Drawing.Point(239, 320);
+			this.txtSante.Location = new System.Drawing.Point(239, 464);
 			this.txtSante.Name = "txtSante";
 			this.txtSante.Size = new System.Drawing.Size(250, 22);
 			this.txtSante.TabIndex = 28;
@@ -197,7 +205,7 @@
 			// lblSante
 			// 
 			this.lblSante.AutoSize = true;
-			this.lblSante.Location = new System.Drawing.Point(50, 320);
+			this.lblSante.Location = new System.Drawing.Point(50, 464);
 			this.lblSante.Name = "lblSante";
 			this.lblSante.Size = new System.Drawing.Size(53, 17);
 			this.lblSante.TabIndex = 27;
@@ -205,7 +213,7 @@
 			// 
 			// txtDateNaissance
 			// 
-			this.txtDateNaissance.Location = new System.Drawing.Point(239, 255);
+			this.txtDateNaissance.Location = new System.Drawing.Point(239, 179);
 			this.txtDateNaissance.Name = "txtDateNaissance";
 			this.txtDateNaissance.Size = new System.Drawing.Size(250, 22);
 			this.txtDateNaissance.TabIndex = 26;
@@ -213,7 +221,7 @@
 			// lblDateNaissance
 			// 
 			this.lblDateNaissance.AutoSize = true;
-			this.lblDateNaissance.Location = new System.Drawing.Point(50, 255);
+			this.lblDateNaissance.Location = new System.Drawing.Point(50, 179);
 			this.lblDateNaissance.Name = "lblDateNaissance";
 			this.lblDateNaissance.Size = new System.Drawing.Size(134, 17);
 			this.lblDateNaissance.TabIndex = 25;
@@ -221,7 +229,7 @@
 			// 
 			// txtTelEleve
 			// 
-			this.txtTelEleve.Location = new System.Drawing.Point(239, 450);
+			this.txtTelEleve.Location = new System.Drawing.Point(239, 260);
 			this.txtTelEleve.Name = "txtTelEleve";
 			this.txtTelEleve.Size = new System.Drawing.Size(250, 22);
 			this.txtTelEleve.TabIndex = 32;
@@ -229,7 +237,7 @@
 			// lblTelEleve
 			// 
 			this.lblTelEleve.AutoSize = true;
-			this.lblTelEleve.Location = new System.Drawing.Point(50, 450);
+			this.lblTelEleve.Location = new System.Drawing.Point(50, 260);
 			this.lblTelEleve.Name = "lblTelEleve";
 			this.lblTelEleve.Size = new System.Drawing.Size(122, 17);
 			this.lblTelEleve.TabIndex = 31;
@@ -237,7 +245,7 @@
 			// 
 			// txtTelParent
 			// 
-			this.txtTelParent.Location = new System.Drawing.Point(239, 385);
+			this.txtTelParent.Location = new System.Drawing.Point(239, 334);
 			this.txtTelParent.Name = "txtTelParent";
 			this.txtTelParent.Size = new System.Drawing.Size(250, 22);
 			this.txtTelParent.TabIndex = 30;
@@ -245,7 +253,7 @@
 			// lblTelParent
 			// 
 			this.lblTelParent.AutoSize = true;
-			this.lblTelParent.Location = new System.Drawing.Point(50, 385);
+			this.lblTelParent.Location = new System.Drawing.Point(50, 334);
 			this.lblTelParent.Name = "lblTelParent";
 			this.lblTelParent.Size = new System.Drawing.Size(129, 17);
 			this.lblTelParent.TabIndex = 29;
@@ -255,6 +263,8 @@
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(176)))), ((int)(((byte)(176)))));
+			this.groupBox1.Controls.Add(this.txtTiersTemps);
+			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.lblClasse);
 			this.groupBox1.Controls.Add(this.txtTelEleve);
 			this.groupBox1.Controls.Add(this.lblNom);
@@ -266,16 +276,33 @@
 			this.groupBox1.Controls.Add(this.lblPrenom);
 			this.groupBox1.Controls.Add(this.txtSante);
 			this.groupBox1.Controls.Add(this.txtPrenom);
+			this.groupBox1.Controls.Add(this.comboBoxClasse);
 			this.groupBox1.Controls.Add(this.lblSante);
-			this.groupBox1.Controls.Add(this.txtClasse);
 			this.groupBox1.Controls.Add(this.txtDateNaissance);
 			this.groupBox1.Controls.Add(this.lblDateNaissance);
 			this.groupBox1.Location = new System.Drawing.Point(280, 29);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(533, 617);
+			this.groupBox1.Size = new System.Drawing.Size(533, 734);
 			this.groupBox1.TabIndex = 33;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+			// 
+			// txtTiersTemps
+			// 
+			this.txtTiersTemps.Location = new System.Drawing.Point(239, 402);
+			this.txtTiersTemps.Name = "txtTiersTemps";
+			this.txtTiersTemps.Size = new System.Drawing.Size(250, 22);
+			this.txtTiersTemps.TabIndex = 34;
+			this.txtTiersTemps.Text = "oui ou non";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(50, 402);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(90, 17);
+			this.label1.TabIndex = 33;
+			this.label1.Text = "Tiers temps :";
 			// 
 			// AjoutEleve
 			// 
@@ -283,14 +310,14 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(216)))), ((int)(((byte)(216)))));
-			this.ClientSize = new System.Drawing.Size(857, 658);
+			this.ClientSize = new System.Drawing.Size(857, 775);
 			this.Controls.Add(this.groupBox1);
-			this.Controls.Add(this.btnListeMedoc);
-			this.Controls.Add(this.btnAjoutMedoc);
+			this.Controls.Add(this.btnListeMedicament);
+			this.Controls.Add(this.btnAjoutMedicament);
 			this.Controls.Add(this.btnListeVisite);
 			this.Controls.Add(this.btnAjoutVisite);
 			this.Controls.Add(this.btnListeEleve);
-			this.Controls.Add(this.btnAjoutEleve);
+			this.Controls.Add(this.btnAccueilEleve);
 			this.Name = "AjoutEleve";
 			this.Text = "Ajouter un élève";
 			this.Load += new System.EventHandler(this.AjoutEleve_Load);
@@ -304,17 +331,17 @@
 
 		private System.Windows.Forms.Button btnValider;
 		private System.Windows.Forms.TextBox txtNom;
-		private System.Windows.Forms.Button btnListeMedoc;
-		private System.Windows.Forms.Button btnAjoutMedoc;
+		private System.Windows.Forms.Button btnListeMedicament;
+		private System.Windows.Forms.Button btnAjoutMedicament;
 		private System.Windows.Forms.Button btnListeVisite;
 		private System.Windows.Forms.Button btnAjoutVisite;
 		private System.Windows.Forms.Button btnListeEleve;
-		private System.Windows.Forms.Button btnAjoutEleve;
+		private System.Windows.Forms.Button btnAccueilEleve;
 		private System.Windows.Forms.Label lblNom;
 		private System.Windows.Forms.TextBox txtPrenom;
 		private System.Windows.Forms.Label lblPrenom;
 		private System.Windows.Forms.Label lblClasse;
-		private System.Windows.Forms.ComboBox txtClasse;
+		private System.Windows.Forms.ComboBox comboBoxClasse;
 		private System.Windows.Forms.TextBox txtSante;
 		private System.Windows.Forms.Label lblSante;
 		private System.Windows.Forms.TextBox txtDateNaissance;
@@ -324,5 +351,7 @@
 		private System.Windows.Forms.TextBox txtTelParent;
 		private System.Windows.Forms.Label lblTelParent;
 		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TextBox txtTiersTemps;
 	}
 }

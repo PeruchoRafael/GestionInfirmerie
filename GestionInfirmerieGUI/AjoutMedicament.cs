@@ -10,15 +10,23 @@ using System.Windows.Forms;
 
 namespace GestionInfirmerieGUI
 {
-	public partial class AccueilEleve : Form
+	public partial class AjoutMedicament : Form
 	{
-		public AccueilEleve()
+		public AjoutMedicament()
 		{
 			InitializeComponent();
 			this.WindowState = FormWindowState.Maximized;
 		}
 
-		private void button1_Click(object sender, EventArgs e)
+		private void btnAccueilEleve_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			AccueilEleve accueilEleve = new AccueilEleve();
+			accueilEleve.ShowDialog();
+			this.Close();
+		}
+
+		private void btnAjoutEleve_Click(object sender, EventArgs e)
 		{
 			this.Hide();
 			AjoutEleve ajoutEleve = new AjoutEleve();
@@ -50,37 +58,12 @@ namespace GestionInfirmerieGUI
 			this.Close();
 		}
 
-		private void btnAjoutMedicament_Click(object sender, EventArgs e)
+		private void btnListeMebdicament_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			AjoutMedicament ajoutMedicament = new AjoutMedicament();
-			ajoutMedicament.ShowDialog();
+			ListeMedicament listeMedicament = new ListeMedicament();
+			listeMedicament.ShowDialog();
 			this.Close();
-		}
-
-		private void btnListeMedicament_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void label1_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void textBox1_TextChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void AccueilEleve_Load(object sender, EventArgs e)
-		{
-
-		}
-
-		private void btnValider_Click(object sender, EventArgs e)
-		{
-			MessageBox.Show("Veuillez renseigner un nom");
 		}
 	}
 }

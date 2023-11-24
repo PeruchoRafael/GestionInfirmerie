@@ -30,13 +30,9 @@ namespace GestionInfirmerieBLL
             ConnexionBD.GetConnexionBD().SetchaineConnexion(chaine);
         }
 
-        // Méthode qui renvoit une List d'objets Utilisateur en faisant appel à la méthode GetUtilisateurs() de la DAL
-        public static List<Utilisateur> GetUtilisateurs()
-        {
-            return UtilisateurDAO.GetUtilisateurs();
-        }
+		#region GestionUtilisateur
 
-        public static bool FindUtilisateur(Utilisateur ut)
+		public static bool FindUtilisateur(Utilisateur ut)
         {
             return UtilisateurDAO.FindUtilisateur(ut);
         }
@@ -59,5 +55,68 @@ namespace GestionInfirmerieBLL
         {
             return UtilisateurDAO.DeleteUtilisateur(id);
         }
-    }
+
+		#endregion
+
+		#region GestionEleve
+
+		public static List<Eleve> GetEleves()
+        {
+            return EleveDAO.GetEleves();
+        }
+
+        public static bool AjoutEleve(Eleve ut)
+        {
+            return EleveDAO.AjoutEleve(ut);
+        }
+
+        public static bool ModifEleve(Eleve ut)
+        {
+            return EleveDAO.ModifEleve(ut);
+        }
+
+        public static bool SupprEleve(Eleve ut)
+        {
+            return EleveDAO.SupprEleve(ut);
+        }
+
+		#endregion
+
+		#region GestionClasse
+
+		public static List<Classe> GetClasse()
+        {
+            return ClasseDAO.GetClasses();
+        }
+
+		#endregion
+
+		#region GestionMedicament
+
+		public static List<Medicament> GetMedicaments()
+		{
+			return MedicamentDAO.GetMedicament();
+		}
+
+		public static bool AjoutMedicament(Medicament ut)
+		{
+			return MedicamentDAO.AjoutMedicament(ut);
+		}
+
+		public static bool ModifMedicament(Medicament ut)
+		{
+			return MedicamentDAO.ModifMedicament(ut);
+		}
+
+		public static bool SupprMedicament(Medicament ut)
+		{
+			return MedicamentDAO.SupprMedicament(ut);
+		}
+
+		#endregion
+
+		#region GestionVisite
+
+		#endregion
+	}
 }

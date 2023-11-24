@@ -33,8 +33,8 @@
 			this.btnListeEleve = new System.Windows.Forms.Button();
 			this.btnAjoutVisite = new System.Windows.Forms.Button();
 			this.btnListeVisite = new System.Windows.Forms.Button();
-			this.btnAjoutMedoc = new System.Windows.Forms.Button();
-			this.btnListeMedoc = new System.Windows.Forms.Button();
+			this.btnAjoutMedicament = new System.Windows.Forms.Button();
+			this.btnListeMedicament = new System.Windows.Forms.Button();
 			this.txtNom = new System.Windows.Forms.TextBox();
 			this.btnValider = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -103,31 +103,31 @@
 			this.btnListeVisite.UseVisualStyleBackColor = false;
 			this.btnListeVisite.Click += new System.EventHandler(this.btnListeVisite_Click);
 			// 
-			// btnAjoutMedoc
+			// btnAjoutMedicament
 			// 
-			this.btnAjoutMedoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-			this.btnAjoutMedoc.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnAjoutMedoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAjoutMedoc.Location = new System.Drawing.Point(12, 236);
-			this.btnAjoutMedoc.Name = "btnAjoutMedoc";
-			this.btnAjoutMedoc.Size = new System.Drawing.Size(200, 53);
-			this.btnAjoutMedoc.TabIndex = 6;
-			this.btnAjoutMedoc.Text = "Ajouter un médicament";
-			this.btnAjoutMedoc.UseVisualStyleBackColor = false;
-			this.btnAjoutMedoc.Click += new System.EventHandler(this.btnAjoutMedoc_Click);
+			this.btnAjoutMedicament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+			this.btnAjoutMedicament.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnAjoutMedicament.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAjoutMedicament.Location = new System.Drawing.Point(12, 236);
+			this.btnAjoutMedicament.Name = "btnAjoutMedicament";
+			this.btnAjoutMedicament.Size = new System.Drawing.Size(200, 53);
+			this.btnAjoutMedicament.TabIndex = 6;
+			this.btnAjoutMedicament.Text = "Ajouter un médicament";
+			this.btnAjoutMedicament.UseVisualStyleBackColor = false;
+			this.btnAjoutMedicament.Click += new System.EventHandler(this.btnAjoutMedicament_Click);
 			// 
-			// btnListeMedoc
+			// btnListeMedicament
 			// 
-			this.btnListeMedoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
-			this.btnListeMedoc.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnListeMedoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnListeMedoc.Location = new System.Drawing.Point(12, 292);
-			this.btnListeMedoc.Name = "btnListeMedoc";
-			this.btnListeMedoc.Size = new System.Drawing.Size(200, 53);
-			this.btnListeMedoc.TabIndex = 7;
-			this.btnListeMedoc.Text = "Liste des médicaments";
-			this.btnListeMedoc.UseVisualStyleBackColor = false;
-			this.btnListeMedoc.Click += new System.EventHandler(this.btnListeMedoc_Click);
+			this.btnListeMedicament.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(174)))), ((int)(((byte)(174)))), ((int)(((byte)(174)))));
+			this.btnListeMedicament.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnListeMedicament.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnListeMedicament.Location = new System.Drawing.Point(12, 292);
+			this.btnListeMedicament.Name = "btnListeMedicament";
+			this.btnListeMedicament.Size = new System.Drawing.Size(200, 53);
+			this.btnListeMedicament.TabIndex = 7;
+			this.btnListeMedicament.Text = "Liste des médicaments";
+			this.btnListeMedicament.UseVisualStyleBackColor = false;
+			this.btnListeMedicament.Click += new System.EventHandler(this.btnListeMedicament_Click);
 			// 
 			// txtNom
 			// 
@@ -146,6 +146,7 @@
 			this.btnValider.TabIndex = 9;
 			this.btnValider.Text = "Valider";
 			this.btnValider.UseVisualStyleBackColor = false;
+			this.btnValider.Click += new System.EventHandler(this.btnValider_Click);
 			// 
 			// dataGridView1
 			// 
@@ -167,8 +168,8 @@
 			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.btnValider);
 			this.Controls.Add(this.txtNom);
-			this.Controls.Add(this.btnListeMedoc);
-			this.Controls.Add(this.btnAjoutMedoc);
+			this.Controls.Add(this.btnListeMedicament);
+			this.Controls.Add(this.btnAjoutMedicament);
 			this.Controls.Add(this.btnListeVisite);
 			this.Controls.Add(this.btnAjoutVisite);
 			this.Controls.Add(this.btnListeEleve);
@@ -190,8 +191,8 @@
 		private System.Windows.Forms.Button btnListeEleve;
 		private System.Windows.Forms.Button btnAjoutVisite;
 		private System.Windows.Forms.Button btnListeVisite;
-		private System.Windows.Forms.Button btnAjoutMedoc;
-		private System.Windows.Forms.Button btnListeMedoc;
+		private System.Windows.Forms.Button btnAjoutMedicament;
+		private System.Windows.Forms.Button btnListeMedicament;
 		private System.Windows.Forms.TextBox txtNom;
 		private System.Windows.Forms.Button btnValider;
 		private System.Windows.Forms.DataGridView dataGridView1;
