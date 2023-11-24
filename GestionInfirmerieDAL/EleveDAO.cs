@@ -42,16 +42,14 @@ namespace GestionInfirmerieDAL
 				int numero = Int32.Parse(monReader["numero_eleve"].ToString());
 				string nom = monReader["nom_eleve"].ToString();
 				string prenom = monReader["prenom_eleve"].ToString();
-				string dateNaissance = monReader["dateNaissance_eleve"].ToString();
+				DateTime dateNaissance = DateTime.Parse(monReader["dateNaissance_eleve"].ToString());
 				int numTelEleve = Int32.Parse(monReader["numeroTelephone_eleve"].ToString());
 				int numTelParent = Int32.Parse(monReader["numeroTelephoneParent"].ToString());
 				string tiersTemps = monReader["tiersemps_eleve"].ToString();
 				string commentaire = monReader["commentaireSante"].ToString();
 				int numClasse = Int32.Parse(monReader["numero_classe"].ToString());
 
-				Classe classe = new Classe(numClasse);
-
-				unEleve = new Eleve(numero, nom, prenom, dateNaissance, numTelEleve, numTelParent, tiersTemps, commentaire, classe);
+				unEleve = new Eleve(numero, nom, prenom, dateNaissance, numTelEleve, numTelParent, tiersTemps, commentaire, numClasse);
 				lesEleves.Add(unEleve);
 			}
 			// Fermeture de la connexion

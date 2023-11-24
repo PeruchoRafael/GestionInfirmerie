@@ -22,8 +22,6 @@ namespace GestionInfirmerieGUI
 			comboBoxClasse.DataSource = GestionInfirmerieBLL.GestionInfirmerie.GetClasse();
 			comboBoxClasse.DisplayMember = "NomClasse";
 			comboBoxClasse.ValueMember = "NumeroClasse";
-
-			int numeroClasseSelectionnee = (int)comboBoxClasse.SelectedValue;
 		}
 
 		private void btnAccueilEleve_Click(object sender, EventArgs e)
@@ -98,14 +96,12 @@ namespace GestionInfirmerieGUI
 		{
 			string nom = txtNom.Text;
 			string prenom = txtPrenom.Text;
-			string dateNaissance = txtDateNaissance.Text;
+			DateTime dateNaissance = DateTime.Parse(txtDateNaissance.Text);
 			string tiersTemps = txtTiersTemps.Text;
 			string commentaire = txtSante.Text;
 			int telEleve = int.Parse(txtTelEleve.Text);
 			int telParentEleve = int.Parse(txtTelParent.Text);
 			int numClasse = int.Parse(comboBoxClasse.Text);
-
-			Classe classe = new Classe(numClasse);
 
 			/*if (!int.TryParse(txtTelEleve.Text, out int telEleve) ||
 			!int.TryParse(txtTelParent.Text, out int telParentEleve) ||
@@ -118,14 +114,14 @@ namespace GestionInfirmerieGUI
 				int telEleve = int.Parse(txtTelEleve.Text);
 			}*/
 
-			Eleve nouvelEleve = new Eleve(nom, prenom, dateNaissance, telEleve, telParentEleve, tiersTemps, commentaire, classe);
+			Eleve nouvelEleve = new Eleve(nom, prenom, dateNaissance, telEleve, telParentEleve, tiersTemps, commentaire, numClasse);
 			bool ajoutEleveVerif = GestionInfirmerieBLL.GestionInfirmerie.AjoutEleve(nouvelEleve);
 
-			if (ajoutEleveVerif != false)
+			if (ajoutEleveVerif != true)
 			{
 				txtNom.Text = nouvelEleve.NomEleve;
 				txtPrenom.Text = nouvelEleve.PrenomEleve;
-				txtDateNaissance.Text = nouvelEleve.DateNaissanceEleve;
+				txtDateNaissance.Text = nouvelEleve.DateNaissanceEleve.ToString();
 				txtTelEleve.Text = nouvelEleve.NumeroTelephoneEleve.ToString();
 				txtTelParent.Text = nouvelEleve.NumeroTelephoneParentEleve.ToString();
 				txtTiersTemps.Text = nouvelEleve.TiersTempsEleve;

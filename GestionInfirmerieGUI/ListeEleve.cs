@@ -175,7 +175,7 @@ namespace GestionInfirmerieGUI
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (e.ColumnIndex == dataGridView1.Columns["Modifier"].Index && e.RowIndex >= 0)
+			if (e.ColumnIndex == dataGridView1.Columns["Supprimer"].Index && e.RowIndex >= 0)
 			{
 				int id = (int)dataGridView1.Rows[e.RowIndex].Cells["NumeroEleve"].Value;
 

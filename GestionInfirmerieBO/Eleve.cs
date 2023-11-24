@@ -11,14 +11,14 @@ namespace GestionInfirmerieBO
 		private int numero_eleve;
 		private string nom_eleve;
 		private string prenom_eleve;
-		private string date_naissance_eleve;
+		private DateTime date_naissance_eleve;
 		private int numero_telephone_eleve;
 		private int numero_telephone_parent_eleve;
 		private string tiers_temps_eleve;
 		private string commentaire_sante_eleve;
-		private Classe numero_class_eleve;
+		private int numero_class_eleve;
 
-		public Eleve(string nom, string prenom, string dateNaissance, int numTelEleve, int numTelParent, string tiersTemps, string commentaireSante, Classe numClasse)
+		public Eleve(string nom, string prenom, DateTime dateNaissance, int numTelEleve, int numTelParent, string tiersTemps, string commentaireSante, int numClasse)
 		{
 			nom_eleve = nom;
 			prenom_eleve = prenom;
@@ -30,7 +30,7 @@ namespace GestionInfirmerieBO
 			numero_class_eleve = numClasse;
 		}
 
-		public Eleve(int numero, string nom, string prenom, string dateNaissance, int numTelEleve, int numTelParent, string tiersTemps, string commentaireSante, Classe numClasse)
+		public Eleve(int numero, string nom, string prenom, DateTime dateNaissance, int numTelEleve, int numTelParent, string tiersTemps, string commentaireSante, int numClasse)
 		{
 			numero_eleve = numero;
 			nom_eleve = nom;
@@ -66,7 +66,7 @@ namespace GestionInfirmerieBO
 			set { prenom_eleve = value; }
 		}
 
-		public string DateNaissanceEleve
+		public DateTime DateNaissanceEleve
 		{
 			get { return date_naissance_eleve; }
 			set { date_naissance_eleve = value; }
@@ -96,7 +96,7 @@ namespace GestionInfirmerieBO
 			set { commentaire_sante_eleve = value; }
 		}
 
-		public Classe NumeroClasseEleve
+		public int NumeroClasseEleve
 		{
 			get { return numero_class_eleve; }
 			set { numero_class_eleve = value; }
