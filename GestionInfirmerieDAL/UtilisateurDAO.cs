@@ -81,13 +81,16 @@ namespace GestionInfirmerieDAL
 
             using (SqlConnection maConnexion = ConnexionBD.GetConnexionBD().GetSqlConnexion())
             {
-                string query = "SELECT numero_utilisateur, email_utilisateur, mot_de_passe_utilisateur FROM Utilisateur WHERE email_utilisateur = @EmailUtilisateur";
+                string query = "SELECT numero_utilisateur, email_utilisateur, mot_de_passe_utilisateur " +
+                    "FROM Utilisateur " +
+                    "WHERE email_utilisateur = @EmailUtilisateur AND mot_de_passe_utilisateur = @MotDePasseUtilisateur";
 
                 using (SqlCommand cmd = new SqlCommand(query, maConnexion))
                 {
                     cmd.Parameters.AddWithValue("@EmailUtilisateur", unUtilisateur.EmailUtilisateur);
+					cmd.Parameters.AddWithValue("@MotDePasseUtilisateur", unUtilisateur.MotDePasseUtilisateur);
 
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+					using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         utilisateurExiste = reader.HasRows;
                     }

@@ -20,11 +20,14 @@ namespace GestionInfirmerieGUI
             InitializeComponent();
             GestionInfirmerieBLL.GestionInfirmerie.SetchaineConnexion(ConfigurationManager.ConnectionStrings["GestionInfirmerie"]);
 			this.WindowState = FormWindowState.Maximized;
+			txtMdp.PasswordChar = '*';
+			txtIdentifiant.Text = "fabien213@gmail.com";
+			txtMdp.Text = "Fabienphp123!";
         }
 
 		private void GestionInfirmerie_Load(object sender, EventArgs e)
 		{
-
+			
 		}
 
 		private void label1_Click(object sender, EventArgs e)
@@ -39,7 +42,7 @@ namespace GestionInfirmerieGUI
 
 		private void textBox2_TextChanged(object sender, EventArgs e)
 		{
-
+			
 		}
 
 		private void button1_Click(object sender, EventArgs e)

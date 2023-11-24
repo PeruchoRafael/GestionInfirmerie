@@ -20,7 +20,7 @@ namespace GestionInfirmerieBO
             email_utilisateur = email;
         }
 
-        // Constructeur à 3 paramètres
+        // Constructeur à 2 paramètres
         public Utilisateur(string email, string motDePasse)
         {
             email_utilisateur = email;
