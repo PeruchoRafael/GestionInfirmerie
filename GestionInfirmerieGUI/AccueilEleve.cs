@@ -60,7 +60,10 @@ namespace GestionInfirmerieGUI
 
 		private void btnListeMedicament_Click(object sender, EventArgs e)
 		{
-
+			this.Hide();
+			ListeMedicament listeMedicament = new ListeMedicament();
+			listeMedicament.ShowDialog();
+			this.Close();
 		}
 
 		private void label1_Click(object sender, EventArgs e)
