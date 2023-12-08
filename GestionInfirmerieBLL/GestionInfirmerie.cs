@@ -113,10 +113,25 @@ namespace GestionInfirmerieBLL
 			return MedicamentDAO.SupprMedicament(ut);
 		}
 
-		#endregion
+        #endregion
 
-		#region GestionVisite
+        #region GestionVisite
 
-		#endregion
-	}
+        public static List<Visite> GetVisites()
+        {
+            return VisiteDAO.GetVisites();
+        }
+
+        public static bool AjoutVisite(Visite ut)
+        {
+            return VisiteDAO.AjoutVisite(ut);
+        }
+
+        public static bool ModifVisite(Visite ut)
+        {
+            return VisiteDAO.ModifVisite(ut);
+        }
+
+        #endregion
+    }
 }
