@@ -29,9 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.checkBoxNon = new System.Windows.Forms.CheckBox();
-			this.checkBoxOui = new System.Windows.Forms.CheckBox();
-			this.label1 = new System.Windows.Forms.Label();
 			this.lblClasse = new System.Windows.Forms.Label();
 			this.txtTelEleve = new System.Windows.Forms.TextBox();
 			this.lblNom = new System.Windows.Forms.Label();
@@ -53,14 +50,15 @@
 			this.btnAjoutVisite = new System.Windows.Forms.Button();
 			this.btnListeEleve = new System.Windows.Forms.Button();
 			this.btnAjoutEleve = new System.Windows.Forms.Button();
+			this.txtTiersTemps = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(176)))), ((int)(((byte)(176)))));
-			this.groupBox1.Controls.Add(this.checkBoxNon);
-			this.groupBox1.Controls.Add(this.checkBoxOui);
+			this.groupBox1.Controls.Add(this.txtTiersTemps);
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.lblClasse);
 			this.groupBox1.Controls.Add(this.txtTelEleve);
@@ -83,41 +81,12 @@
 			this.groupBox1.TabIndex = 40;
 			this.groupBox1.TabStop = false;
 			// 
-			// checkBoxNon
-			// 
-			this.checkBoxNon.AutoSize = true;
-			this.checkBoxNon.Location = new System.Drawing.Point(394, 402);
-			this.checkBoxNon.Name = "checkBoxNon";
-			this.checkBoxNon.Size = new System.Drawing.Size(54, 20);
-			this.checkBoxNon.TabIndex = 35;
-			this.checkBoxNon.Text = "Non";
-			this.checkBoxNon.UseVisualStyleBackColor = true;
-			// 
-			// checkBoxOui
-			// 
-			this.checkBoxOui.AutoSize = true;
-			this.checkBoxOui.Location = new System.Drawing.Point(239, 401);
-			this.checkBoxOui.Name = "checkBoxOui";
-			this.checkBoxOui.Size = new System.Drawing.Size(49, 20);
-			this.checkBoxOui.TabIndex = 34;
-			this.checkBoxOui.Text = "Oui";
-			this.checkBoxOui.UseVisualStyleBackColor = true;
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(50, 402);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(84, 16);
-			this.label1.TabIndex = 33;
-			this.label1.Text = "Tiers temps :";
-			// 
 			// lblClasse
 			// 
 			this.lblClasse.AutoSize = true;
 			this.lblClasse.Location = new System.Drawing.Point(50, 536);
 			this.lblClasse.Name = "lblClasse";
-			this.lblClasse.Size = new System.Drawing.Size(55, 16);
+			this.lblClasse.Size = new System.Drawing.Size(58, 17);
 			this.lblClasse.TabIndex = 22;
 			this.lblClasse.Text = "Classe :";
 			// 
@@ -133,7 +102,7 @@
 			this.lblNom.AutoSize = true;
 			this.lblNom.Location = new System.Drawing.Point(50, 42);
 			this.lblNom.Name = "lblNom";
-			this.lblNom.Size = new System.Drawing.Size(42, 16);
+			this.lblNom.Size = new System.Drawing.Size(45, 17);
 			this.lblNom.TabIndex = 10;
 			this.lblNom.Text = "Nom :";
 			// 
@@ -142,7 +111,7 @@
 			this.lblTelEleve.AutoSize = true;
 			this.lblTelEleve.Location = new System.Drawing.Point(50, 260);
 			this.lblTelEleve.Name = "lblTelEleve";
-			this.lblTelEleve.Size = new System.Drawing.Size(116, 16);
+			this.lblTelEleve.Size = new System.Drawing.Size(122, 17);
 			this.lblTelEleve.TabIndex = 31;
 			this.lblTelEleve.Text = "Téléphone élève :";
 			// 
@@ -176,7 +145,7 @@
 			this.lblTelParent.AutoSize = true;
 			this.lblTelParent.Location = new System.Drawing.Point(50, 334);
 			this.lblTelParent.Name = "lblTelParent";
-			this.lblTelParent.Size = new System.Drawing.Size(120, 16);
+			this.lblTelParent.Size = new System.Drawing.Size(129, 17);
 			this.lblTelParent.TabIndex = 29;
 			this.lblTelParent.Text = "Téléphone parent :";
 			// 
@@ -185,7 +154,7 @@
 			this.lblPrenom.AutoSize = true;
 			this.lblPrenom.Location = new System.Drawing.Point(50, 107);
 			this.lblPrenom.Name = "lblPrenom";
-			this.lblPrenom.Size = new System.Drawing.Size(60, 16);
+			this.lblPrenom.Size = new System.Drawing.Size(65, 17);
 			this.lblPrenom.TabIndex = 20;
 			this.lblPrenom.Text = "Prénom :";
 			// 
@@ -216,7 +185,7 @@
 			this.lblSante.AutoSize = true;
 			this.lblSante.Location = new System.Drawing.Point(50, 464);
 			this.lblSante.Name = "lblSante";
-			this.lblSante.Size = new System.Drawing.Size(48, 16);
+			this.lblSante.Size = new System.Drawing.Size(53, 17);
 			this.lblSante.TabIndex = 27;
 			this.lblSante.Text = "Santé :";
 			// 
@@ -232,7 +201,7 @@
 			this.lblDateNaissance.AutoSize = true;
 			this.lblDateNaissance.Location = new System.Drawing.Point(50, 179);
 			this.lblDateNaissance.Name = "lblDateNaissance";
-			this.lblDateNaissance.Size = new System.Drawing.Size(126, 16);
+			this.lblDateNaissance.Size = new System.Drawing.Size(134, 17);
 			this.lblDateNaissance.TabIndex = 25;
 			this.lblDateNaissance.Text = "Date de naissance :";
 			// 
@@ -309,6 +278,22 @@
 			this.btnAjoutEleve.Text = "Accueil élève";
 			this.btnAjoutEleve.UseVisualStyleBackColor = false;
 			// 
+			// txtTiersTemps
+			// 
+			this.txtTiersTemps.Location = new System.Drawing.Point(239, 400);
+			this.txtTiersTemps.Name = "txtTiersTemps";
+			this.txtTiersTemps.Size = new System.Drawing.Size(250, 22);
+			this.txtTiersTemps.TabIndex = 34;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(50, 400);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(87, 17);
+			this.label1.TabIndex = 33;
+			this.label1.Text = "Tiers Temps";
+			// 
 			// ModifEleve
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -333,9 +318,6 @@
 		#endregion
 
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.CheckBox checkBoxNon;
-		private System.Windows.Forms.CheckBox checkBoxOui;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblClasse;
 		private System.Windows.Forms.TextBox txtTelEleve;
 		private System.Windows.Forms.Label lblNom;
@@ -357,5 +339,7 @@
 		private System.Windows.Forms.Button btnAjoutVisite;
 		private System.Windows.Forms.Button btnListeEleve;
 		private System.Windows.Forms.Button btnAjoutEleve;
+		private System.Windows.Forms.TextBox txtTiersTemps;
+		private System.Windows.Forms.Label label1;
 	}
 }

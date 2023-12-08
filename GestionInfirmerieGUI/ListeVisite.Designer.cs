@@ -34,6 +34,8 @@
 			this.btnListeEleve = new System.Windows.Forms.Button();
 			this.btnAjoutEleve = new System.Windows.Forms.Button();
 			this.btnAccueilEleve = new System.Windows.Forms.Button();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btnListeMedicament
@@ -114,11 +116,23 @@
 			this.btnAccueilEleve.UseVisualStyleBackColor = false;
 			this.btnAccueilEleve.Click += new System.EventHandler(this.btnAccueilEleve_Click);
 			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Location = new System.Drawing.Point(229, 11);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.RowHeadersWidth = 51;
+			this.dataGridView1.RowTemplate.Height = 24;
+			this.dataGridView1.Size = new System.Drawing.Size(574, 427);
+			this.dataGridView1.TabIndex = 20;
+			this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+			// 
 			// ListeVisite
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.btnListeMedicament);
 			this.Controls.Add(this.btnAjoutMedicament);
 			this.Controls.Add(this.btnAjoutVisite);
@@ -128,6 +142,7 @@
 			this.Name = "ListeVisite";
 			this.Text = "Liste des visites";
 			this.Load += new System.EventHandler(this.ListeVisite_Load);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -140,5 +155,6 @@
 		private System.Windows.Forms.Button btnListeEleve;
 		private System.Windows.Forms.Button btnAjoutEleve;
 		private System.Windows.Forms.Button btnAccueilEleve;
+		private System.Windows.Forms.DataGridView dataGridView1;
 	}
 }

@@ -28,6 +28,7 @@ namespace GestionInfirmerieGUI
 
 			// Création d'une en-tête de colonne pour la colonne numero_eleve
 			DataGridViewTextBoxColumn NumeroColumn = new DataGridViewTextBoxColumn();
+			NumeroColumn.Name = "NumeroEleve";
 			NumeroColumn.DataPropertyName = "NumeroEleve";
 			NumeroColumn.HeaderText = "Identifiant";
 			dataGridView1.Columns.Add(NumeroColumn);
@@ -84,12 +85,14 @@ namespace GestionInfirmerieGUI
 
 			//bouton supprimer et modifier
 			DataGridViewButtonColumn btnModifier = new DataGridViewButtonColumn();
+			btnModifier.Name = "btnModifier";
 			btnModifier.HeaderText = "Modifier";
 			btnModifier.Text = "Modifier";
 			btnModifier.UseColumnTextForButtonValue = true;
 			dataGridView1.Columns.Add(btnModifier);
 
 			DataGridViewButtonColumn btnSupprimer = new DataGridViewButtonColumn();
+			btnSupprimer.Name = "btnSupprimer";
 			btnSupprimer.HeaderText = "Supprimer";
 			btnSupprimer.Text = "Supprimer";
 			btnSupprimer.UseColumnTextForButtonValue = true;
@@ -117,7 +120,11 @@ namespace GestionInfirmerieGUI
 			dataGridView1.DataSource = lesEleves;
 
 			dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-			lesEleves = GestionInfirmerieBLL.GestionInfirmerie.GetEleves();
+			dataGridView1.CellClick += dataGridView1_CellContentClick;
+
+			dataGridView1.DataSource = lesEleves;
+
+			dataGridView1.Refresh();
 		}
 
 		private void btnAccueilEleve_Click(object sender, EventArgs e)
@@ -175,35 +182,31 @@ namespace GestionInfirmerieGUI
 
 		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (e.ColumnIndex == dataGridView1.Columns["Supprimer"].Index && e.RowIndex >= 0)
+			if (e.RowIndex >= 0)
 			{
-				int id = (int)dataGridView1.Rows[e.RowIndex].Cells["NumeroEleve"].Value;
+				DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
 
-				MessageBox.Show("l'id est : {id}");
-			}
-			/*if (e.RowIndex >= 0)
-			{
-				if (e.ColumnIndex == dataGridView1.Columns["Modifier"].Index)
+				int columnIndex = e.ColumnIndex;
+
+				if (columnIndex == dataGridView1.Columns["btnModifier"].Index)
 				{
+					int id = Convert.ToInt32(selectedRow.Cells["NumeroEleve"].Value);
+					Eleve eleve = new Eleve(id);
+					GestionInfirmerieBLL.GestionInfirmerie.ModifEleve(eleve);
+
 					this.Hide();
-					ModifEleve modifEleve = new ModifEleve();
+					ModifEleve modifEleve = new ModifEleve(eleve);
 					modifEleve.ShowDialog();
 					this.Close();
-
-					int numEleve = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["numero_eleve"].Value);
-
-					Eleve eleve = new Eleve(numEleve);
-					GestionInfirmerieBLL.GestionInfirmerie.ModifEleve(eleve);
 				}
-				else if (e.ColumnIndex == dataGridView1.Columns["Supprimer"].Index)
+				else if (columnIndex == dataGridView1.Columns["btnSupprimer"].Index)
 				{
-					// Logique pour le bouton "Supprimer"
-					int numEleve = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["numero_eleve"].Value);
-					// Appelez une fonction pour supprimer l'élève en utilisant l'idEleve
-					Eleve eleve = new Eleve(numEleve);
+					int id = Convert.ToInt32(selectedRow.Cells["NumeroEleve"].Value);
+					Eleve eleve = new Eleve(id);
 					GestionInfirmerieBLL.GestionInfirmerie.SupprEleve(eleve);
+					MessageBox.Show("suppression");
 				}
-			}*/
+			}
 		}
 	}
 }
