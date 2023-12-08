@@ -37,16 +37,13 @@ namespace GestionInfirmerieDAL
         }
         public SqlConnection GetSqlConnexion()
         {
-            if (maConnexion == null)
-            {
-                maConnexion = new SqlConnection();
-            }
-            maConnexion.ConnectionString = chaineConnexion;
-            // Si la connexion est fermée, on l’ouvre
+            SqlConnection maConnexion = new SqlConnection(chaineConnexion);
+
             if (maConnexion.State == System.Data.ConnectionState.Closed)
             {
                 maConnexion.Open();
             }
+
             return maConnexion;
         }
         public void CloseConnexion()

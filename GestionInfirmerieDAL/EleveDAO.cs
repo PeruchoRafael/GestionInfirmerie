@@ -126,11 +126,9 @@ namespace GestionInfirmerieDAL
 			cmd.Connection = maConnexion;
 			cmd.CommandText = "DELETE FROM Eleve WHERE numero_eleve = @NumeroEleve";
 			
-			cmd.Parameters.AddWithValue("@NumeroEleve", numEleve);
+			cmd.Parameters.AddWithValue("@NumeroEleve", numEleve.NumeroEleve);
 
 			cmd.ExecuteNonQuery();
-
-			maConnexion.Close();
 
 			return supprEleve;
 		}
